@@ -16,7 +16,7 @@ describe("supermarket checkout", function() {
 
   describe("item cost", function() {
     it('the user can see the the price of an item', function() {
-      expect(item1.getPrice()).toEqual(1);
+      expect(item1.getPrice()).toEqual('£1.00');
     });
   });
 
