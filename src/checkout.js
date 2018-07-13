@@ -13,16 +13,3 @@ Checkout.prototype.total = function() {
     return a + b
   });
 };
-
-function newArray(items) {
-  var prices = items.map( item => item.price)
-  return prices.reduce(function(a,b) {
-    return a + b
-  });
-}
-
-function sum(numbers) {
-  return numbers.reduce(function(a,b) {
-    return a + b
-  });
-}
