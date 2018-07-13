@@ -1,26 +1,29 @@
-describe("checkout", function() {
+describe("UNIT TESTS: Checkout", function() {
+
+  var checkout;
+  var item1;
+  var item2;
+
+  beforeEach(function() {
+    checkout = new Checkout();
+    item1 = {name: "item1", price: 1};
+    item2 = {name: "item2", price: 2};
+  });
 
   describe(".scan", function() {
     it('confirms that an item has been scanned', function() {
-      var item = jasmine.createSpy('item');
-      var checkout = new Checkout();
-      expect(checkout.scan(item)).toEqual('Item scanned');
+      expect(checkout.scan(item1)).toEqual('Item scanned');
     });
-    it('confirms that an item has been scanned', function() {
-      var item = jasmine.createSpy('item');
-      var checkout = new Checkout();
-      checkout.scan(item);
-      expect(checkout.items).toContain(item);
+    it('adds an item to the checkout', function() {
+      checkout.scan(item1);
+      expect(checkout.items).toContain(item1);
     });
   });
 
   describe(".total", function() {
     it('returns the checkout total in the correct format', function() {
-      var bread = new Item('bread', 1);
-      var milk = new Item('milk', 2);
-      var checkout = new Checkout();
-      checkout.scan(bread)
-      checkout.scan(milk)
+      checkout.scan(item1);
+      checkout.scan(item2);
       expect(checkout.total()).toEqual('£3.00');
     });
   });

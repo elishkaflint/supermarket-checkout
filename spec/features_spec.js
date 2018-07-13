@@ -1,8 +1,8 @@
-describe("supermarket checkout", function() {
+describe("FEATURE TESTS: Supermarket Checkout", function() {
 
+  var checkout;
   var item1;
   var item2;
-  var checkout;
 
   beforeEach(function() {
     checkout = new Checkout();
@@ -43,7 +43,7 @@ describe("supermarket checkout", function() {
   // I would like to see all prices correctly formatted (£xx.xx)
 
   describe("calculating the total", function() {
-    it('the user can see the total of scanned items in the correct format', function() {
+    it('the user can see the total in the correct format', function() {
       checkout.scan(item1);
       checkout.scan(item2);
       expect(checkout.total()).toEqual('£3.00');
