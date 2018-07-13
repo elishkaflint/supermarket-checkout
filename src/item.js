@@ -4,5 +4,5 @@ function Item(name, price) {
 }
 
 Item.prototype.getPrice = function () {
-  return this.price;
+  return "£" + this.price.toFixed(2);
 };
