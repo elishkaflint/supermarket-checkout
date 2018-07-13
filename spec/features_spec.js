@@ -33,14 +33,18 @@ describe("supermarket checkout", function() {
   // So that I know how much to pay
   // I would like to be able to see a total for all scanned items
 
+  // As a shopper
+  // So that I know how much to pay
+  // I would like to see all prices correctly formatted (£xx.xx)
+
   describe("calculating the total", function() {
-    it('the user can see the total of scanned items', function() {
+    it('the user can see the total of scanned items in the correct format', function() {
       var bread = new Item('bread', 1);
       var milk = new Item('milk', 2);
       var checkout = new Checkout();
       checkout.scan(bread);
       checkout.scan(milk);
-      expect(checkout.total()).toEqual(3);
+      expect(checkout.total()).toEqual('£3.00');
     });
   });
 
@@ -49,7 +53,7 @@ describe("supermarket checkout", function() {
 });
 
 
-//
+
 // As a shopper
 // So that I know how much to pay
 // I would like to see all prices correctly formatted (£xx.xx)

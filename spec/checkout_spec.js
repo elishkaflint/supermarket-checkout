@@ -15,13 +15,13 @@ describe("checkout", function() {
   });
 
   describe(".total", function() {
-    it('returns the checkout total', function() {
+    it('returns the checkout total in the correct format', function() {
       var bread = new Item('bread', 1);
       var milk = new Item('milk', 2);
       var checkout = new Checkout();
       checkout.scan(bread)
       checkout.scan(milk)
-      expect(checkout.total()).toEqual(3);
+      expect(checkout.total()).toEqual('£3.00');
     });
   });
 
