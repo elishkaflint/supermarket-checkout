@@ -10,6 +10,6 @@ Checkout.prototype.scan = function(item) {
 Checkout.prototype.total = function() {
   var prices = this.items.map( item => item.price)
   return prices.reduce(function(a,b) {
-    return a + b
+    return "£" + (a + b).toFixed(2)
   });
 };
