@@ -21,13 +21,16 @@ describe("supermarket checkout", function() {
       var checkout = new Checkout();
       expect(checkout.scan(item)).toEqual('Item scanned');
     });
+    it('the checkout tracks the scanned items', function() {
+      var bread = new Item('bread', 1);
+      var checkout = new Checkout();
+      checkout.scan(bread);
+      expect(checkout.items).toContain(bread);
+    });
   });
 
 });
 
-
-
-//
 // As a shopper
 // So that I know how much to pay
 // I would like to be able to see a total for all scanned items
